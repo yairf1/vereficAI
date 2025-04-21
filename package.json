@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "verificai",
+=======
+  "name": "vereficai",
+>>>>>>> f83803be62c0dae38184ff656c6d21bca702753d
   "version": "1.0.0",
   "description": "",
 =======
@@ -16,7 +20,11 @@
   "name": "vereficai",
   "version": "1.0.0",
 >>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
+<<<<<<< HEAD
 >>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
+=======
+>>>>>>> 386f256bcc4faa5082238b474f2d333fc57c4f7d
+>>>>>>> f83803be62c0dae38184ff656c6d21bca702753d
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +32,11 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
+=======
+>>>>>>> 386f256bcc4faa5082238b474f2d333fc57c4f7d
+>>>>>>> f83803be62c0dae38184ff656c6d21bca702753d
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -51,5 +63,9 @@
   },
   "description": ""
 >>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
+<<<<<<< HEAD
 >>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
+=======
+>>>>>>> 386f256bcc4faa5082238b474f2d333fc57c4f7d
+>>>>>>> f83803be62c0dae38184ff656c6d21bca702753d
 }
