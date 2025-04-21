@@ -1,29 +1,12 @@
 {
-<<<<<<< HEAD
-  "name": "verificai",
-  "version": "1.0.0",
-  "description": "",
-=======
   "name": "vereficai",
   "version": "1.0.0",
-<<<<<<< HEAD
->>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
-=======
   "description": "",
->>>>>>> c68b21e6155a72eb56bbb4c86fb075f704a7cb95
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^5.1.0"
-  }
-=======
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yairf1/vereficAI.git"
@@ -37,11 +20,5 @@
   "homepage": "https://github.com/yairf1/vereficAI#readme",
   "dependencies": {
     "express": "^5.1.0"
-<<<<<<< HEAD
-  },
-  "description": ""
->>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
-=======
   }
->>>>>>> c68b21e6155a72eb56bbb4c86fb075f704a7cb95
 }
