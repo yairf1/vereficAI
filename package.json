@@ -16,9 +16,9 @@
     "url": "https://github.com/yairf1/vereficAI/issues"
   },
   "homepage": "https://github.com/yairf1/vereficAI#readme",
-  "description": "",
   "dependencies": {
     "expres": "^0.0.5",
     "express": "^5.1.0"
-  }
+  },
+  "description": ""
 }
