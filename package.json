@@ -1,15 +1,55 @@
 {
+<<<<<<< HEAD
   "name": "verificai",
   "version": "1.0.0",
   "description": "",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "name": "verficai",
+=======
+  "name": "vscode-projects",
+>>>>>>> 6a44b4a933d0036285753e8eade220e8b3e5b009
+  "version": "1.0.0",
+  "description": "",
+=======
+  "name": "vereficai",
+  "version": "1.0.0",
+>>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
+>>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
   }
+<<<<<<< HEAD
+=======
+=======
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yairf1/vereficAI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yairf1/vereficAI/issues"
+  },
+  "homepage": "https://github.com/yairf1/vereficAI#readme",
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^5.1.0"
+  },
+  "description": ""
+>>>>>>> 1dcef0ba62d76b0cd575a2519e1987088288566a
+>>>>>>> 2cb5709e6d132c8e23fa3c58d03fe8b6056ce8ae
 }
