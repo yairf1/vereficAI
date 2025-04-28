@@ -1,4 +1,41 @@
 /* navber */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+      to right,
+      rgba(223, 224, 224, 0.53),
+      rgba(0, 122, 204, 0.32)
+    ),
+    url('./background.png') no-repeat center center / cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+
+  color: #fff;
+  text-align: center;
+  /* overflow: hidden; */
+}
+
+.background-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: start 0.5s ease-in-out forwards;
+}
+
 .navbar {
   position: fixed; /* היה absolute → עכשיו fixed */
   top: 0;
@@ -14,17 +51,17 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
+.logo2 {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
 }
 
-.logo span {
+.logo2 span {
   color: #ff4c4c;
 }
 
-.logo:hover {
+.logo2:hover {
   animation: logoHover 0.5s ease-in-out;
 }
 
@@ -39,6 +76,12 @@
     transform: scale(1);
   }
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 40px; /* יותר מקום למעלה */
+}
+
 .navbar a {
   text-decoration: none;
 }
@@ -70,12 +113,6 @@ body {
   font-family: 'Heebo', sans-serif;
   background-color: #f0f2f5;
   text-align: center;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 140px 20px 40px; /* יותר מקום למעלה */
 }
 
 .logo {
@@ -140,4 +177,40 @@ h1 span {
   margin-top: 10px;
   font-weight: bold;
   color: #d32f2f; /* Red */
+}
+/* footer */
+.footer {
+  width: 100%;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3); /* shadow upwards */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #b3ddf0;
 }
