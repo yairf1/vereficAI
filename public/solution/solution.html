@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>solution</title>
-  <link rel="stylesheet" href="./solution.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="./solution.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <script defer src="./solution.js"></script>
   <script defer src="../../app.js"></script>
 </head>
@@ -18,36 +18,49 @@
       <a href="/about">About</a>
     </nav>
   </header>
-  <div class="background-container">
-    <div class="content-wrapper">
-      <h1>Enter URL / Text / Picture of Article</h1>
 
-      <form id="search-form">
-        <div class="search-wrapper">
-          <input type="search" name="q" placeholder="Search..." required />
-          <button type="submit" title="Search">
-            <i class="fas fa-search"></i> Is this reliable?
-          </button>
+  <main class="main-content">
+    <div class="background-container">
+      <div class="content-wrapper">
+        <h1>Enter URL / Text / Picture of Article</h1>
+
+        <form id="search-form">
+          <div class="search-wrapper">
+            <input type="search" name="q" placeholder="Search..." required />
+            <button type="submit" title="Search">
+              <i class="fas fa-search"></i> Is this reliable?
+            </button>
+          </div>
+        </form>
+
+        <div class="loader-wrapper" id="loaderWrapper">
+          <div class="dot-loader" id="loading-spinner">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </form>
 
-      <!-- עטיפת טעינה -->
-      <div class="loader-wrapper" id="loaderWrapper">
-        <div class="dot-loader" id="loading-spinner">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="result-boxes" id="results">
+          <div class="box" id="box1">Reliable</div>
+          <div class="box" id="box2">Caution</div>
+          <div class="box" id="box3">Unreliable</div>
         </div>
-      </div>
-
-      <!-- תוצאות -->
-      <div class="result-boxes" id="results">
-        <div class="box" id="box1">Reliable</div>
-        <div class="box" id="box2">Caution</div>
-        <div class="box" id="box3">Unreliable</div>
       </div>
     </div>
-  </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 VerificAI. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/solution">Solutions</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
