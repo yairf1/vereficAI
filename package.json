@@ -1,0 +1,24 @@
+{
+  "name": "vereficai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yairf1/vereficAI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yairf1/vereficAI/issues"
+  },
+  "homepage": "https://github.com/yairf1/vereficAI#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
