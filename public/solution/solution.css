@@ -16,7 +16,6 @@ body {
   
   color: #fff;
   text-align: center;
-  animation: start 0.5s ease-in-out forwards;
   overflow: hidden;
 }
 
@@ -41,6 +40,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  animation: start 0.5s ease-in-out forwards;
 }
 
 .content-wrapper {
@@ -67,7 +67,6 @@ form {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 8px 20px;
   transition: 0.3s ease;
 }
 
@@ -76,6 +75,7 @@ form {
 }
 
 input[type="search"] {
+  height: 50px;
   border: none;
   padding: 12px 20px;
   font-size: 18px;
@@ -93,13 +93,13 @@ button {
   padding: 12px 24px;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 25px;
+  border-radius: 0 25px 25px 0;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #005fa3;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .loader-wrapper {
@@ -190,4 +190,59 @@ button:hover {
   background-color: #888 !important;
   opacity: 0.6;
   filter: grayscale(100%);
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo span {
+  color: #ff4c4c;
+}
+
+.logo:hover {
+  animation: logoHover 0.5s ease-in-out;
+}
+
+@keyframes logoHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.navbar a {
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px; /* מוגדל מ-16px */
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #b3ddf0;
 }
