@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 2. ניתובים (routes) לכל דף HTML
 app.get('/', (req, res) => {
-// אפשר להפנות ישר ל־home.html
+  // אפשר להפנות ישר ל־home.html
   res.sendFile(path.join(__dirname, 'public', 'HomePage', 'home.html'));
 });
 
