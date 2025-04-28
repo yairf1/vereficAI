@@ -1,3 +1,66 @@
+/* navber */
+.navbar {
+  position: fixed; /* היה absolute → עכשיו fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo span {
+  color: #ff4c4c;
+}
+
+.logo:hover {
+  animation: logoHover 0.5s ease-in-out;
+}
+
+@keyframes logoHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.navbar a {
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px; /* מוגדל מ-16px */
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #b3ddf0;
+}
+
+/* css homePage */
 .h1 {
   margin-left: 10px;
 }
@@ -12,7 +75,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 140px 20px 40px; /* יותר מקום למעלה */
 }
 
 .logo {
