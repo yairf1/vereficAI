@@ -1,13 +1,6 @@
 .h1 {
   margin-left: 10px;
 }
-div {
-  background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-}
 body {
   margin: 0;
   padding: 0;
@@ -23,7 +16,9 @@ body {
 }
 
 .logo {
-  width: 120px;
+  width: 30vw; /* היה 22vw → עכשיו 30vw */
+  max-width: 400px; /* היה 320px → עכשיו עד 400px */
+  min-width: 180px; /* היה 150px → עכשיו לפחות 180px */
   margin: 20px auto;
   display: block;
 }
@@ -35,7 +30,7 @@ h1 {
 }
 
 h1 span {
-  color: #d32f2f; /* אדום */
+  color: #d32f2f; /* Red */
 }
 
 .description {
@@ -45,7 +40,7 @@ h1 span {
 }
 
 .news-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #1d1d1d;
   margin-bottom: 30px;
 }
@@ -63,22 +58,23 @@ h1 span {
   width: 250px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .card h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: #666;
   margin: 5px 0;
 }
 
 .card .result {
   margin-top: 10px;
   font-weight: bold;
-  color: #d32f2f; /* צבע תוצאה */
+  color: #d32f2f; /* Red */
 }
