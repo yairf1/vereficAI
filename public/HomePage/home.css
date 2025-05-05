@@ -1,4 +1,4 @@
-/* navber */
+/* home.css*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Heebo', sans-serif;
   background: linear-gradient(
       to right,
       rgba(223, 224, 224, 0.53),
@@ -18,26 +18,13 @@ body {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(8px);
-
   color: #fff;
   text-align: center;
-  /* overflow: hidden; */
 }
 
-.background-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  animation: start 0.5s ease-in-out forwards;
-}
-
+/* Navbar */
 .navbar {
-  position: fixed; /* היה absolute → עכשיו fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -76,11 +63,6 @@ body {
     transform: scale(1);
   }
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 140px 20px 40px; /* יותר מקום למעלה */
-}
 
 .navbar a {
   text-decoration: none;
@@ -94,7 +76,7 @@ body {
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px; /* מוגדל מ-16px */
+  font-size: 18px;
   transition: color 0.3s ease;
   font-weight: 500;
 }
@@ -103,22 +85,17 @@ body {
   color: #b3ddf0;
 }
 
-/* css homePage */
-.h1 {
-  margin-left: 10px;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Heebo', sans-serif;
-  background-color: #f0f2f5;
-  text-align: center;
+/* Main content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 40px;
 }
 
 .logo {
-  width: 30vw; /* היה 22vw → עכשיו 30vw */
-  max-width: 400px; /* היה 320px → עכשיו עד 400px */
-  min-width: 180px; /* היה 150px → עכשיו לפחות 180px */
+  width: 30vw;
+  max-width: 400px;
+  min-width: 180px;
   margin: 20px auto;
   display: block;
 }
@@ -130,7 +107,7 @@ h1 {
 }
 
 h1 span {
-  color: #d32f2f; /* Red */
+  color: #d32f2f;
 }
 
 .description {
@@ -176,9 +153,10 @@ h1 span {
 .card .result {
   margin-top: 10px;
   font-weight: bold;
-  color: #d32f2f; /* Red */
+  color: #d32f2f;
 }
-/* footer */
+
+/* Footer */
 .footer {
   width: 100%;
   padding: 20px 50px;
@@ -187,7 +165,7 @@ h1 span {
   text-align: center;
   color: #fff;
   margin-top: 40px;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3); /* shadow upwards */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .footer-content {
