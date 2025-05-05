@@ -1,40 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("search-form");
-  const loaderWrapper = document.getElementById("loaderWrapper");
-  const resultBoxes = document.querySelectorAll(".box");
+// server/server.js
+const path    = require('path');
+const express = require('express');
+const cors    = require('cors');            // ← import cors
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+const { OPENAI_API_KEY, PORT = 5000 } = process.env;
+if (!OPENAI_API_KEY) {
+  console.error('❌ Missing OPENAI_API_KEY in .env');
+  process.exit(1);
+}
 
-    // איפוס כל הריבועים
-    resultBoxes.forEach(box => {
-      box.classList.remove("highlight");
-      box.classList.remove("faded");
-    });
+// 1) Enable CORS for your front-end
+app = express();
+// allow only localhost:3000 (your React/Vite/etc. dev server)
+app.use(cors({ origin: 'http://localhost:3000', methods: ['GET','POST','OPTIONS'] }));
+// allow pre-flights on all routes
+app.options('*', cors({ origin: 'http://localhost:3000' }));
 
-    loaderWrapper.classList.add("show");
+// 2) JSON parser
+app.use(express.json());
 
-    const randomIndex = Math.floor(Math.random() * 3) + 1;
+// (the rest stays the same)
+app.use(express.static(path.join(__dirname, '../public')));
 
-    setTimeout(() => {
-      loaderWrapper.classList.remove("show");
+app.post('/api/checkReliability', async (req, res) => {
+  // …
+});
 
-      const selectedBox = document.getElementById(`box${randomIndex}`);
-      selectedBox.classList.add("highlight");
-
-      // אפור לשאר הריבועים
-      resultBoxes.forEach(box => {
-        if (box !== selectedBox) {
-          box.classList.add("faded");
-        }
-      });
-
-      // אם רוצים להחזיר הכל לקדמותו אחרי כמה זמן:
-      setTimeout(() => {
-        selectedBox.classList.remove("highlight");
-        resultBoxes.forEach(box => box.classList.remove("faded"));
-      }, 4000);
-
-    }, 1000);
-  });
+app.listen(PORT, () => {
+  console.log(`🚀 Server listening on http://localhost:${PORT}`);
 });

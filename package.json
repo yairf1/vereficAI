@@ -1,7 +1,6 @@
 {
   "name": "vereficai",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -19,6 +18,11 @@
   },
   "homepage": "https://github.com/yairf1/vereficAI#readme",
   "dependencies": {
-    "express": "^5.1.0"
-  }
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.96.0"
+  },
+  "description": ""
 }
