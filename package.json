@@ -22,7 +22,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2",
-    "openai": "^4.96.0"
+    "openai": "^4.96.0",
+    "router": "^2.2.0"
   },
   "description": ""
 }
