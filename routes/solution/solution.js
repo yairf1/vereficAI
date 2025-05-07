@@ -1,4 +1,6 @@
-// server/server.js
+const {Router} = require('express');
+const express = require('express');
+const router = Router();
 const path = require('path');
 const express = require('express');
 const cors = require('cors'); // ← import cors
@@ -10,25 +12,25 @@ if (!OPENAI_API_KEY) {
   process.exit(1);
 }
 
-// 1) Enable CORS for your front-end
-app = express();
+router.get('/solution', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'solution', 'solution.html'));
+});
+
 // allow only localhost:3000 (your React/Vite/etc. dev server)
-app.use(
+router.use(
   cors({ origin: 'http://localhost:3000', methods: ['GET', 'POST', 'OPTIONS'] })
 );
 // allow pre-flights on all routes
-app.options('*', cors({ origin: 'http://localhost:3000' }));
+router.options('*', cors({ origin: 'http://localhost:3000' }));
 
 // 2) JSON parser
-app.use(express.json());
+router.use(express.json());
 
 // (the rest stays the same)
-app.use(express.static(path.join(__dirname, '../public')));
+router.use(express.static(path.join(__dirname, '../public')));
 
-app.post('/api/checkReliability', async (req, res) => {
+router.post('/api/checkReliability', async (req, res) => {
   // …
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${PORT}`);
-});
+module.exports = router;
