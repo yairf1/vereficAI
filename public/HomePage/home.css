@@ -6,6 +6,7 @@
 }
 
 body {
+  padding-top: 200px; /* התאימי לגובה הניווט */
   font-family: 'Heebo', sans-serif;
   background: linear-gradient(
       to right,
