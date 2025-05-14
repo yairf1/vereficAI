@@ -5,13 +5,11 @@ const router = require('./routes/index.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// 1. הגדרת תיקיית static
+//  middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 
-// 3. הפעלת השרת
+//  הפעלת השרת
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
-
-//test
