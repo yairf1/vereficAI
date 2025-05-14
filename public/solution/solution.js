@@ -1,32 +1,37 @@
-// server/server.js
-const path    = require('path');
-const express = require('express');
-const cors    = require('cors');            // ← import cors
-require('dotenv').config({ path: path.join(__dirname, '.env') });
-
-const { OPENAI_API_KEY, PORT = 5000 } = process.env;
-if (!OPENAI_API_KEY) {
-  console.error('❌ Missing OPENAI_API_KEY in .env');
-  process.exit(1);
-}
-
-// 1) Enable CORS for your front-end
-app = express();
-// allow only localhost:3000 (your React/Vite/etc. dev server)
-app.use(cors({ origin: 'http://localhost:3000', methods: ['GET','POST','OPTIONS'] }));
-// allow pre-flights on all routes
-app.options('*', cors({ origin: 'http://localhost:3000' }));
-
-// 2) JSON parser
-app.use(express.json());
-
-// (the rest stays the same)
-app.use(express.static(path.join(__dirname, '../public')));
-
-app.post('/api/checkReliability', async (req, res) => {
-  // …
-});
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${PORT}`);
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("search-form");
+    const input = form.querySelector("input[name='q']");
+    const loader = document.getElementById("loaderWrapper");
+    const resultBoxes = document.getElementById("results");
+  
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const question = input.value.trim();
+      if (!question) return;
+  
+      loader.style.display = "block";
+      resultBoxes.style.opacity = 0.3;
+  
+      try {
+        const response = await fetch("http://localhost:5000/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ question })
+        });
+  
+        const data = await response.json();
+        console.log(data.answer);
+  
+        // תוכל לשנות כאן את ההצגה של התוצאה:
+        alert("תשובת ChatGPT: " + data.answer);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        loader.style.display = "none";
+        resultBoxes.style.opacity = 1;
+      }
+    });
+  });
+  
