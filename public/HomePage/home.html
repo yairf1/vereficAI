@@ -1,27 +1,25 @@
-<!-- This is the HTML code for the home page of the VerificAI website. It includes a navigation bar, a welcome message, and a section for news updates with cards displaying reports and their verification status. The footer contains links to other pages and copyright information. The page uses external CSS for styling and Google Fonts for typography. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VerificAI</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../layout/navbar/navbar.css">
+    <link rel="stylesheet" href="../layout/footer/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/HomePage/home.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load('../layout/navbar/navbar.html');
+        })
+        $(function(){
+            $("#footer").load('../layout/footer/footer.html');
+        })
+    </script>
   </head>
   <body>
-    <header class="navbar">
-      <a href="/">
-        <div class="logo2">verific<span>AI</span></div>
-      </a>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/solution">Solution</a>
-        <a href="/about">About</a>
-      </nav>
-    </header>
+    <header id="header"></header>
 
     <div class="container">
       <img src="img/logoHomePage.png" alt="VerificAI Logo" class="logo" />
@@ -57,17 +55,7 @@
         </div>
       </div>
 
-      <footer class="footer">
-        <div class="footer-content">
-          <p>&copy; 2025 VerificAI. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/solution">Solutions</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
-      </footer>
     </div>
+    <footer id="footer"></footer>
   </body>
 </html>

@@ -1,7 +1,9 @@
 // server/server.js
 const path = require('path');
 const express = require('express');
+const app = express();
 require('dotenv').config({ path: path.join(__dirname, '.env') });
+
 
 // 1) Env vars
 const { OPENAI_API_KEY, PORT = 5000 } = process.env;
@@ -31,9 +33,14 @@ console.log('⚙️ Env vars:', {
 const OpenAI = require('openai');
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-// 5) Express setup
-const app = express();
+// middleware
 app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // Add the HTTP methods you need
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // Add the headers you need
+  next();
+});
 
 app.post('/chat', async (req, res) => {
   try {

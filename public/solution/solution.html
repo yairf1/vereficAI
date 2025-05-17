@@ -6,19 +6,22 @@
   <title>solution</title>
   <link rel="stylesheet" href="./solution.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <script defer src="../../server/server.js"></script>
+  <link rel="stylesheet" href="../layout/navbar/navbar.css">
+  <link rel="stylesheet" href="../layout/footer/footer.css">
+
   <script defer src="./solution.js"></script>
-  <script defer src="../../app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+      $(function(){
+          $("#header").load('../layout/navbar/navbar.html');
+      })
+      $(function(){
+          $("#footer").load('../layout/footer/footer.html');
+      })
+  </script>
 </head>
 <body>
-  <header class="navbar">
-    <a href="/"><div class="logo">verific<span>AI</span></div></a>
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/solution">Solution</a>
-      <a href="/about">About</a>
-    </nav>
-  </header>
+  <header id="header"></header>
 
   <main class="main-content">
     <div class="background-container">
@@ -52,16 +55,6 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 VerificAI. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/solution">Solutions</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-  </footer>
+  <footer id="footer"></footer>
 </body>
 </html>

@@ -6,91 +6,28 @@
 }
 
 body {
-  padding-top: 200px; /* התאימי לגובה הניווט */
   font-family: 'Heebo', sans-serif;
   background: linear-gradient(
       to right,
       rgba(223, 224, 224, 0.53),
       rgba(0, 122, 204, 0.32)
     ),
-    url('./background.png') no-repeat center center / cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    url('../img/background.png') no-repeat center center / cover;
   backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
   color: #fff;
   text-align: center;
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.logo2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.logo2 span {
-  color: #ff4c4c;
-}
-
-.logo2:hover {
-  animation: logoHover 0.5s ease-in-out;
-}
-
-@keyframes logoHover {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.navbar a {
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #b3ddf0;
+  min-width: 100%;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 /* Main content */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 140px 20px 40px;
 }
 
 .logo {
@@ -157,39 +94,7 @@ h1 span {
   color: #d32f2f;
 }
 
-/* Footer */
-.footer {
+/* Header & footer adjusting */
+header, footer {
   width: 100%;
-  padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  text-align: center;
-  color: #fff;
-  margin-top: 40px;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #b3ddf0;
 }

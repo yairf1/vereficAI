@@ -6,7 +6,7 @@
   text-align: center;
   color: #fff;
   margin-top: 40px;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3); /* shadow upwards */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3); 
 }
 
 .footer-content {

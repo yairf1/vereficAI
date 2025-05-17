@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About the Website</title>
     <link rel="stylesheet" href="aboutPage/about.css" />
+    <link rel="stylesheet" href="layout/navbar/navbar.css" />
+    <link rel="stylesheet" href="layout/footer/footer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("../layout/navbar/navbar.html");
+        $("#footer").load("../layout/footer/footer.html");
+      });
+    </script>
   </head>
   <body>
+    <header id="header"></header>
+
     <div class="container">
       <h1>About the Website</h1>
 
       <div class="intro">
         <p>
-          Welcome to our website, created out of a real need to bring reliable
-          and responsible information. <br />
-          We invite you to follow, share, and support. Together, we can fight
-          the spread of misinformation, which often causes great confusion and
-          can even lead to emotional and psychological harm for many people.
+          Welcome to our website, created out of a real need to bring reliable and responsible information.
+          <br /><br />
+          We invite you to follow, share, and support. Together, we can fight the spread of misinformation,
+          which causes confusion and emotional harm.
         </p>
       </div>
 
       <div class="section">
+        <div class="image">
+          <img src="../img/rami.png" alt="A man running, symbolizing misrepresented events" />
+        </div>
         <div class="text">
           <p>
-            One day, we came across a set of images suspected to depict a
-            violent incident in the field, while in reality, it was an old event
-            from another country. We saw how easy it is to create a false
-            narrative, and how people fall for it emotionally. That's why we
-            decided to build a smart platform to instantly verify information
-            using an algorithm that cross-checks reliable sources.
+            One day, we came across a set of images suspected to depict a violent incident in the field,
+            while in reality, it was an old event from another country. We saw how easy it is to create a
+            false narrative, and how people fall for it emotionally. That's why we decided to build a smart
+            platform to instantly verify information using an algorithm that cross-checks reliable sources.
           </p>
-        </div>
-        <div class="image">
-          <img src="../img/rami.png" alt="Man running" />
         </div>
       </div>
 
       <div class="section">
-        <div class="image">
-          <img src="../img/rahchel.jpeg" alt="Sad woman" />
-        </div>
         <div class="text">
           <p>
-            After all, we all want the same thing – to live in a world of truth
-            and respectful dialogue. Fake scenarios presented as facts are among
-            the biggest threats to our society. Our platform was built to stop
-            that.
+            After all, we all want the same thing – to live in a world of truth and respectful dialogue.
+            Fake scenarios presented as facts are among the biggest threats to our society.
+            Our platform was built to stop that.
           </p>
+        </div>
+        <div class="image">
+          <img src="../img/rahchel.jpeg" alt="A concerned woman, representing public impact" />
         </div>
       </div>
 
@@ -56,24 +64,10 @@
           information that misleads us daily. Whether it’s news events or online
           rumors – we are here.
         </p>
-        <img src="../img/us.png" alt="Team meeting" />
+        <img src="../img/us.png" alt="The VerificAI team in a meeting" />
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2025 VerificAI. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/solution">Solutions</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-    </footer>
-
-        </div>
-      </div>
-    </footer>
+    <footer id="footer"></footer>
   </body>
 </html>
