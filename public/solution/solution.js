@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("search-form");
-    const input = form.querySelector("input[name='q']");
+    const input = form.querySelector("input[name='claim']");
     const loader = document.getElementById("loaderWrapper");
     const resultBoxes = document.getElementById("results");
   
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       loader.style.display = "block";
       resultBoxes.style.opacity = 0.3;
-  
+      
       try {
         const response = await fetch("http://localhost:5000/chat", {
           method: "POST",
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
   
         const data = await response.json();
-        console.log(data.answer);
+        console.log(data.reply);
   
         // תוכל לשנות כאן את ההצגה של התוצאה:
-        alert("תשובת ChatGPT: " + data.answer);
+        alert("תשובת ChatGPT: " + data.reply.content);
       } catch (error) {
         console.error("Error:", error);
       } finally {

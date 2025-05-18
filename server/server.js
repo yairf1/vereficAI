@@ -31,6 +31,7 @@ console.log('⚙️ Env vars:', {
 
 // 4) OpenAI v4 client
 const OpenAI = require('openai');
+const { log } = require('console');
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 // middleware
@@ -44,25 +45,25 @@ app.use((req, res, next) => {
 
 app.post('/chat', async (req, res) => {
   try {
-    const claim = req.body.prompt;
+    const claim = req.body.question;
 
     const systemPrompt = `
-You are a professional fact-checking AI. Your job is to verify if a news claim is TRUE or FALSE.
-Return your answer in the following format ONLY (in English):
-1. TRUE or FALSE — as a big title (uppercase)
-2. Two short sentences explaining why.
-3. A list of credible sources with URLs (e.g. news, government, or science websites).
+      You are a professional fact-checking AI. Your job is to verify if a news claim is TRUE or FALSE.
+      Return your answer in the following format ONLY (in English):
+      1. TRUE or FALSE — as a big title (uppercase)
+      2. Two short sentences explaining why.
+      3. A list of credible sources with URLs (e.g. news, government, or science websites).
 
-Example output:
----
-TRUE  
-The claim is supported by several peer-reviewed studies. Experts in the field have confirmed the accuracy of this information.  
-Sources:  
-- https://www.example.com/study  
-- https://www.example.com/official_report
----
-Now, verify this claim: "${claim}"
-`;
+      Example output:
+      ---
+      TRUE  
+      The claim is supported by several peer-reviewed studies. Experts in the field have confirmed the accuracy of this information.  
+      Sources:  
+      - https://www.example.com/study  
+      - https://www.example.com/official_report
+      ---
+      Now, verify this claim: "${claim}"
+    `;
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
