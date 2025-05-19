@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>solution</title>
-  <link rel="stylesheet" href="./solution.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="../layout/navbar/navbar.css">
-  <link rel="stylesheet" href="../layout/footer/footer.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>solution</title>
+    <link rel="stylesheet" href="./solution.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../layout/navbar/navbar.css" />
+    <link rel="stylesheet" href="../layout/footer/footer.css" />
 
-  <script defer src="./solution.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script>
-      $(function(){
-          $("#header").load('../layout/navbar/navbar.html');
-      })
-      $(function(){
-          $("#footer").load('../layout/footer/footer.html');
-      })
-  </script>
-</head>
-<body>
-  <header id="header"></header>
+    <script defer src="./solution.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('#header').load('../layout/navbar/navbar.html');
+      });
+      $(function () {
+        $('#footer').load('../layout/footer/footer.html');
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header"></header>
 
-  <main class="main-content">
-    <div class="background-container">
-      <div class="content-wrapper">
-        <h1>Enter URL / Text / Picture of Article</h1>
+    <main class="main-content">
+      <div class="background-container">
+        <div class="content-wrapper">
+          <h1>Enter URL / Text / Picture of Article</h1>
 
-        <form id="search-form">
-          <div class="search-wrapper">
-            <input type="search" name="claim" placeholder="Search..." required />
-            <button type="submit" title="Search">
-              <i class="fas fa-search"></i> Is this reliable?
-            </button>
+          <form id="search-form">
+            <div class="search-wrapper">
+              <input
+                type="search"
+                name="claim"
+                placeholder="Search..."
+                required
+              />
+              <button type="submit" title="Search">
+                <i class="fas fa-search"></i> Is this reliable?
+              </button>
+            </div>
+          </form>
+
+          <div class="loader-wrapper" id="loaderWrapper">
+            <div class="dot-loader" id="loading-spinner">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-        </form>
 
-        <div class="loader-wrapper" id="loaderWrapper">
-          <div class="dot-loader" id="loading-spinner">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="result-boxes" id="results">
+            <div class="box" id="box1">True</div>
+            <div class="box" id="box2">Not sure</div>
+            <div class="box" id="box3">False</div>
           </div>
-        </div>
 
-        <div class="result-boxes" id="results">
-          <div class="box" id="box1">Reliable</div>
-          <div class="box" id="box2">Caution</div>
-          <div class="box" id="box3">Unreliable</div>
+          <div id="response-display" class="response-display"></div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer id="footer"></footer>
-</body>
+    <footer id="footer"></footer>
+  </body>
 </html>

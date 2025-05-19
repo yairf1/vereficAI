@@ -6,8 +6,12 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, rgba(223, 224, 224, 0.53), rgba(0, 122, 204, 0.32)),
-              url('../img/backgroundSolution.png') no-repeat center center / cover;
+  background: linear-gradient(
+      to right,
+      rgba(223, 224, 224, 0.53),
+      rgba(0, 122, 204, 0.32)
+    ),
+    url('../img/backgroundSolution.png') no-repeat center center / cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -78,7 +82,7 @@ form {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-input[type="search"] {
+input[type='search'] {
   height: 50px;
   border: none;
   padding: 12px 20px;
@@ -133,18 +137,27 @@ button:hover {
   animation: bounceColor 1s infinite ease-in-out;
 }
 
-.dot-loader span:nth-child(1) { animation-delay: 0s; }
-.dot-loader span:nth-child(2) { animation-delay: 0.1s; }
-.dot-loader span:nth-child(3) { animation-delay: 0.2s; }
-.dot-loader span:nth-child(4) { animation-delay: 0.3s; }
+.dot-loader span:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.dot-loader span:nth-child(4) {
+  animation-delay: 0.3s;
+}
 
 @keyframes bounceColor {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
-    background-color: #F44336;
+    background-color: #f44336;
   }
   25% {
-    background-color: #FFC107;
+    background-color: #ffc107;
   }
   50% {
     transform: translateY(-15px);
@@ -179,9 +192,15 @@ button:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-#box1 { background-color: #4caf50; }
-#box2 { background-color: #FFC107; }
-#box3 { background-color: #F44336; }
+#box1 {
+  background-color: #4caf50;
+}
+#box2 {
+  background-color: #ffc107;
+}
+#box3 {
+  background-color: #f44336;
+}
 
 .box.highlight {
   transform: scale(1.2);
@@ -194,6 +213,36 @@ button:hover {
   background-color: #888 !important;
   opacity: 0.6;
   filter: grayscale(100%);
+}
+
+.response-display {
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+  max-width: 800px;
+  width: 100%;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.response-display::before {
+  content: 'Analysis Result:';
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
@@ -226,9 +275,15 @@ button:hover {
 }
 
 @keyframes logoHover {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .navbar a {
@@ -252,6 +307,7 @@ button:hover {
   color: #b3ddf0;
 }
 /* Header & footer adjusting */
-header, footer {
+header,
+footer {
   width: 100%;
 }
