@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(8px);
-  
+
   color: #fff;
   text-align: center;
 }
@@ -28,11 +28,12 @@ body {
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 50px;
+  height: 80px;
+  padding: 0 50px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -42,11 +43,12 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-  
+
 .logo {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
+  padding: 10px 0;
 }
 
 .logo span {
@@ -58,10 +60,17 @@ body {
 }
 
 @keyframes logoHover {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
+
 .navbar a {
   text-decoration: none;
 }
@@ -69,16 +78,25 @@ body {
 .nav-links {
   display: flex;
   gap: 30px;
+  height: 100%;
+  align-items: center;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px; 
-  transition: color 0.3s ease;
+  font-size: 18px;
+  transition: all 0.3s ease;
   font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  height: 44px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a:hover {
   color: #b3ddf0;
+  background: rgba(255, 255, 255, 0.1);
 }
