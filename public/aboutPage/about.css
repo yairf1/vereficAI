@@ -6,7 +6,8 @@
 }
 
 /* Full-screen and scrollable layout */
-html, body {
+html,
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background: linear-gradient(
@@ -37,7 +38,7 @@ footer {
 .container {
   flex: 1;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto 0; /* Added top margin to account for fixed navbar */
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;

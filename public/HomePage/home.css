@@ -27,7 +27,8 @@ body {
 /* Main content */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto 0; /* Added top margin to account for fixed navbar */
+  padding: 0 20px;
 }
 
 .logo {
@@ -95,7 +96,7 @@ h1 span {
 }
 
 /* Header & footer adjusting */
-header, footer {
+header,
+footer {
   width: 100%;
 }
-
