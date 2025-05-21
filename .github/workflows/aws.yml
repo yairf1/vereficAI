@@ -1,0 +1,34 @@
+name: upload my image to DockerHub
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build
+        run: docker build . --tag ${{ secrets.DOCKER_USERNAME }}/verificai:latest
+
+      - name: Push to DockerHub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/verificai:latest
+        
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: stop old container
+        run: sudo docker stop verificai
+      - name: delete old container
+        run: sudo docker rm verificAI
+      - name: pull image from docker
+        run: sudo docker pull ${{ secrets.DOCKER_USERNAME }}/verificai:latest
+      - name: run docker container
+        run: sudo docker run --name verificai -d -p 80:3000 -e OPENAI_API_KEY="${{secrets.OPENAI_API_KEY}}" ${{ secrets.DOCKER_USERNAME }}/verificai
+      
