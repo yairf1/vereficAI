@@ -60,6 +60,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/test", (req, res) => {
+  res.json({ message: "Server is running!" });
+})
+
 app.post("/chat", async (req, res) => {
   try {
     const claim = req.body.question;
