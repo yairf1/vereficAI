@@ -1,3 +1,6 @@
+const isLocal = window.location.hostname === 'localhost';
+const API_BASE = isLocal ? 'http://localhost:5000/chat' : 'http://16.171.254.122:5000/chat';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('search-form');
   const input = form.querySelector("input[name='claim']");
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     responseDisplay.style.display = 'none';
 
     try {
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch(API_BASE, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
