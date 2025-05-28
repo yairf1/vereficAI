@@ -36,11 +36,7 @@ const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 // middleware
 app.use(express.json());
 app.use((req, res, next) => {
-  const allowedOrigins = [ "http://localhost:3000", "http://16.171.254.122:80",];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
+  res.setHeader("Access-Control-Allow-Origin", '*'); // Allow all origins
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE" );
   res.setHeader("Access-Control-Allow-Headers","X-Requested-With,content-type");
