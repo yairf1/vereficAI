@@ -1,11 +1,13 @@
 // server/server.js
 const path = require("path");
+const OpenAI = require("openai");
 const express = require("express");
 const app = express();
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 // 1) Env vars
-const { OPENAI_API_KEY, PORT = 5000 } = process.env;
+const { OPENAI_API_KEY} = process.env;
+const PORT = 5000
 if (!OPENAI_API_KEY) {
   console.error("❌ Missing OPENAI_API_KEY in .env");
   process.exit(1);
@@ -24,13 +26,10 @@ console.log("⏳ ▶️ server.js loaded");
 console.log("    • __dirname:", __dirname);
 console.log("    • process.cwd():", process.cwd());
 console.log("⚙️ Env vars:", {
-  PORT,
   OPENAI_API_KEY: OPENAI_API_KEY ? "✅ loaded" : "❌ missing",
 });
 
 // 4) OpenAI v4 client
-const OpenAI = require("openai");
-const { log } = require("console");
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 // middleware
@@ -39,6 +38,7 @@ app.use((req, res, next) => {
   const allowedOrigins = [
     "http://localhost:3000",
     "http://16.171.254.122:3000",
+    "http://16.171.254.122",
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
@@ -102,5 +102,5 @@ app.post("/chat", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${PORT}`);
+  console.log(`🚀 Server listening on port ${PORT}`);
 });
