@@ -39,6 +39,9 @@ app.use((req, res, next) => {
     "http://localhost:3000",
     "http://ec2-16-171-254-122.eu-north-1.compute.amazonaws.com:3000",
     "http://16.171.254.122:3000",
+    "http://localhost",
+    "http://ec2-16-171-254-122.eu-north-1.compute.amazonaws.com",
+    "http://16.171.254.122",
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
