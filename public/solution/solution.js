@@ -1,5 +1,5 @@
 const isLocal = window.location.hostname === 'localhost';
-const API_BASE = isLocal ? 'http://localhost:5000/chat' : 'http://16.171.254.122:5000/chat';
+const API_BASE = isLocal ? 'http://localhost:5000/chat' : 'http://ec2-16-171-254-122.eu-north-1.compute.amazonaws.com:5000/chat';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('search-form');

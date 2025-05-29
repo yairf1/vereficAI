@@ -37,8 +37,8 @@ app.use(express.json());
 app.use((req, res, next) => {
   const allowedOrigins = [
     "http://localhost:3000",
-    "http://16.171.254.122:3000",
-    "http://16.171.254.122",
+    "http://ec2-16-171-254-122.eu-north-1.compute.amazonaws.com:3000",
+    "http://ec2-16-171-254-122.eu-north-1.compute.amazonaws.com",
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
