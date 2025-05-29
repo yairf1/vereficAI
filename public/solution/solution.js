@@ -1,4 +1,4 @@
-const hostName = window.location.hostname === 'localhost';
+const hostName = window.location.hostname;
 const API_BASE =  `http://${hostName}:5000/chat`;
 
 document.addEventListener('DOMContentLoaded', () => {
