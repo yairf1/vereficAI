@@ -1,0 +1,21 @@
+{
+    "home": "Home",
+    "solution": "Solution",
+    "about": "About",
+    "welcome": "WELCOME TO",
+    "description": "Your tool for quick and accurate verification of reports and news by cross-referencing reliable sources.",
+    "joinUs": "Join us and reveal the truth in real time!",
+    "newsUpdates": "News Updates:",
+    "report": "Report",
+    "result": "Result",
+    "noConfirmation": "No confirmation from reliable sources.",
+    "rumorOnly": "Rumor only, no official confirmation.",
+    "officiallyConfirmed": "Officially confirmed by Home Front Command.",
+    "enterContent": "Enter URL / Text / Picture of Article",
+    "isReliable": "Is this reliable?",
+    "true": "True",
+    "notSure": "Not sure",
+    "false": "False",
+    "allRightsReserved": "All rights reserved.",
+    "contact": "Contact"
+}

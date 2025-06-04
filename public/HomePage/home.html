@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/HomePage/home.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../layout/navbar/navbar.js"></script>
     <script>
         $(function(){
             $("#header").load('../layout/navbar/navbar.html');
-        })
+        });
         $(function(){
             $("#footer").load('../layout/footer/footer.html');
-        })
+        });
     </script>
   </head>
   <body>
@@ -23,34 +24,34 @@
 
     <div class="container">
       <img src="img/logoHomePage.png" alt="VerificAI Logo" class="logo" />
-      <h1>WELCOME TO <span>VerificAI</span></h1>
+      <h1><span data-translate="welcome">WELCOME TO</span> <span>VerificAI</span></h1>
       <p class="description">
-        Your tool for quick and accurate verification of reports and news by
-        cross-referencing reliable sources. <br />
-        Join us and reveal the truth in real time!
+        <span data-translate="description">Your tool for quick and accurate verification of reports and news by
+        cross-referencing reliable sources.</span> <br />
+        <span data-translate="joinUs">Join us and reveal the truth in real time!</span>
       </p>
-      <h2 class="news-title">News Updates:</h2>
+      <h2 class="news-title" data-translate="newsUpdates">News Updates:</h2>
 
       <div class="cards">
         <div class="card">
-          <h3>Report 1</h3>
-          <p>Report: "Shooting on Dizengoff Street in Tel Aviv"</p>
+          <h3><span data-translate="report">Report</span> 1</h3>
+          <p><span data-translate="report">Report</span>: "Shooting on Dizengoff Street in Tel Aviv"</p>
           <p class="result">
-            Result: ❌ No confirmation from reliable sources.
+            <span data-translate="result">Result</span>: ❌ <span data-translate="noConfirmation">No confirmation from reliable sources.</span>
           </p>
         </div>
 
         <div class="card">
-          <h3>Report 2</h3>
-          <p>Report: "Israel has returned the bodies of hostages"</p>
-          <p class="result">Result: ❌ Rumor only, no official confirmation.</p>
+          <h3><span data-translate="report">Report</span> 2</h3>
+          <p><span data-translate="report">Report</span>: "Israel has returned the bodies of hostages"</p>
+          <p class="result"><span data-translate="result">Result</span>: ❌ <span data-translate="rumorOnly">Rumor only, no official confirmation.</span></p>
         </div>
 
         <div class="card">
-          <h3>Report 3</h3>
-          <p>Report: "Red alert sirens throughout Tel Aviv"</p>
+          <h3><span data-translate="report">Report</span> 3</h3>
+          <p><span data-translate="report">Report</span>: "Red alert sirens throughout Tel Aviv"</p>
           <p class="result">
-            Result: ✅ Officially confirmed by Home Front Command.
+            <span data-translate="result">Result</span>: ✅ <span data-translate="officiallyConfirmed">Officially confirmed by Home Front Command.</span>
           </p>
         </div>
       </div>
