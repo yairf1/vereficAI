@@ -17,5 +17,11 @@
     "notSure": "Not sure",
     "false": "False",
     "allRightsReserved": "All rights reserved.",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about_title": "About the Website",
+    "about_intro": "Welcome to our website, created out of a real need to bring reliable and responsible information.We invite you to follow, share, and support. Together, we can fight the spread of misinformation, which causes confusion and emotional harm.",
+    "about_story": "One day, we came across a set of images suspected to depict a violent incident in the field, while in reality, it was an old event from another country. We saw how easy it is to create a false narrative, and how people fall for it emotionally. That's why we decided to build a smart platform to instantly verify information using an algorithm that cross-checks reliable sources.",
+    "about_goal": "After all, we all want the same thing – to live in a world of truth and respectful dialogue. Fake scenarios presented as facts are among the biggest threats to our society. Our platform was built to stop that.",
+    "about_team_title": "This is us, the VerificAI Team",
+    "about_team_text": "We built this website to address the growing need for verifying information that misleads us daily. Whether it’s news events or online rumors – we are here."
 }

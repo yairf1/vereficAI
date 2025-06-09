@@ -12,20 +12,11 @@
     <link rel="stylesheet" href="../layout/navbar/navbar.css" />
     <link rel="stylesheet" href="../layout/footer/footer.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../Locales/en.js"></script>
-    <script src="../Locales/he.js"></script>
-    <script src="../Locales/ru.js"></script>
-    <script src="../Locales/index.js"></script>
     <script src="../layout/navbar/navbar.js"></script>
     <script defer src="./solution.js"></script>
     <script>
       $(function () {
-        $('#header').load('../layout/navbar/navbar.html', function() {
-          // Initialize language after navbar is loaded
-          const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-          document.getElementById('language-select').value = savedLanguage;
-          changeLanguage(savedLanguage);
-        });
+        $('#header').load('../layout/navbar/navbar.html',);
       });
       $(function () {
         $('#footer').load('../layout/footer/footer.html');

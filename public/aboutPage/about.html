@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="layout/navbar/navbar.css" />
     <link rel="stylesheet" href="layout/footer/footer.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../layout/navbar/navbar.js"></script>
     <script>
       $(function () {
         $("#header").load("../layout/navbar/navbar.html");
@@ -19,47 +20,60 @@
     <header id="header"></header>
 
     <div class="container">
-      <h1>About the Website</h1>
+      <h1 data-translate="about_title">About the Website</h1>
 
       <div class="intro">
-        <p>
-          Welcome to our website, created out of a real need to bring reliable and responsible information.
+        <p data-translate="about_intro">
+          Welcome to our website, created out of a real need to bring reliable
+          and responsible information.
           <br /><br />
-          We invite you to follow, share, and support. Together, we can fight the spread of misinformation,
-          which causes confusion and emotional harm.
+          We invite you to follow, share, and support. Together, we can fight
+          the spread of misinformation, which causes confusion and emotional
+          harm.
         </p>
       </div>
 
       <div class="section">
         <div class="image">
-          <img src="../img/rami.png" alt="A man running, symbolizing misrepresented events" />
+          <img
+            src="../img/rami.png"
+            alt="A man running, symbolizing misrepresented events"
+          />
         </div>
         <div class="text">
-          <p>
-            One day, we came across a set of images suspected to depict a violent incident in the field,
-            while in reality, it was an old event from another country. We saw how easy it is to create a
-            false narrative, and how people fall for it emotionally. That's why we decided to build a smart
-            platform to instantly verify information using an algorithm that cross-checks reliable sources.
+          <p data-translate="about_story">
+            One day, we came across a set of images suspected to depict a
+            violent incident in the field, while in reality, it was an old event
+            from another country. We saw how easy it is to create a false
+            narrative, and how people fall for it emotionally. That's why we
+            decided to build a smart platform to instantly verify information
+            using an algorithm that cross-checks reliable sources.
           </p>
         </div>
       </div>
 
       <div class="section">
         <div class="text">
-          <p>
-            After all, we all want the same thing – to live in a world of truth and respectful dialogue.
-            Fake scenarios presented as facts are among the biggest threats to our society.
-            Our platform was built to stop that.
+          <p data-translate="about_goal">
+            After all, we all want the same thing – to live in a world of truth
+            and respectful dialogue. Fake scenarios presented as facts are among
+            the biggest threats to our society. Our platform was built to stop
+            that.
           </p>
         </div>
         <div class="image">
-          <img src="../img/rahchel.jpeg" alt="A concerned woman, representing public impact" />
+          <img
+            src="../img/rahchel.jpeg"
+            alt="A concerned woman, representing public impact"
+          />
         </div>
       </div>
 
       <div class="team">
-        <h2>This is us, the VerificAI Team</h2>
-        <p>
+        <h2 data-translate="about_team_title">
+          This is us, the VerificAI Team
+        </h2>
+        <p data-translate="about_team_text">
           We built this website to address the growing need for verifying
           information that misleads us daily. Whether it’s news events or online
           rumors – we are here.
