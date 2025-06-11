@@ -42,6 +42,8 @@ body {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   animation: start 0.5s ease-in-out forwards;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @keyframes start {
@@ -98,7 +100,7 @@ input[type='search'] {
   border-radius: 25px;
 }
 
-button {
+.button {
   background-color: #0077cc;
   color: white;
   border: none;
@@ -109,7 +111,7 @@ button {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
+.button:hover {
   background-color: #005fa3;
   transform: scale(1.02);
 }
@@ -174,9 +176,11 @@ button:hover {
   justify-content: center;
   gap: 30px;
   margin-top: 50px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;      /* allow wrapping */
+  overflow-x: visible;  /* remove horizontal scroll */
   padding: 0 20px;
-  transition: margin-top 0.5s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .box {
@@ -189,6 +193,8 @@ button:hover {
   min-width: 150px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 150px;    /* allow boxes to shrink/grow, base size 150px */
+  max-width: 300px;   /* optional max width */
 }
 
 .box:hover {
@@ -253,4 +259,79 @@ button:hover {
 header,
 footer {
   width: 100%;
+}
+
+/* ===== Responsive adjustments ===== */
+
+@media (max-width: 1024px) {
+  /* Reduce main content top margin on tablets */
+  .main-content {
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+
+  input[type='search'] {
+    width: 250px;
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .main-content {
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  input[type='search'] {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 25px;
+  }
+
+  .result-boxes {
+    flex-wrap: wrap; 
+    overflow-x: auto;   /* 👈 allow horizontal scroll if needed */
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .box {
+    flex: 0 0 auto;        /* 👈 prevent boxes from shrinking */
+    min-width: 150px;      /* 👈 keep them readable */
+    padding: 25px 15px;
+    font-size: 16px;
+  }
+
+  .response-display {
+    max-width: 100%;
+    padding: 20px 15px;
+    font-size: 16px;
+    white-space: normal;
+  }
 }
