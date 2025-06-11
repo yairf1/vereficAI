@@ -90,3 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
     subtree: true,
   });
 });
+
+// toggle the navigation menu
+function toggleMenu() {
+  const nav = document.getElementById("nav-menu");
+  nav.classList.toggle("active");
+}
