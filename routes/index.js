@@ -1,4 +1,4 @@
-const {Router} = require('express');
+const { Router } = require('express');
 const router = Router();
 
 const about = require('../routes/about/about.js');
@@ -7,8 +7,8 @@ const solution = require('../routes/solution/solution.js');
 const team = require('../routes/team/team.js');
 
 router.use('/about', about);
-router.use('/', home);
-router.use('/solution', solution);
+router.use('/home', home);
+router.use('/', solution);
 router.use('/team', team);
 
 module.exports = router;
