@@ -316,14 +316,14 @@ footer {
 
   .result-boxes {
     flex-wrap: wrap; 
-    overflow-x: auto;   /* 👈 allow horizontal scroll if needed */
+    overflow-x: auto;   /* allow horizontal scroll if needed */
     padding: 0 10px;
     gap: 20px;
   }
 
   .box {
-    flex: 0 0 auto;        /* 👈 prevent boxes from shrinking */
-    min-width: 150px;      /* 👈 keep them readable */
+    flex: 0 0 auto;        /* prevent boxes from shrinking */
+    min-width: 150px;      /* keep them readable */
     padding: 25px 15px;
     font-size: 16px;
   }
