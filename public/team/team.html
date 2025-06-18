@@ -11,8 +11,8 @@
     <script src="../layout/navbar/navbar.js"></script>
     <script>
       $(function () {
-        $("#header").load("../layout/navbar/navbar.html");
-        $("#footer").load("../layout/footer/footer.html");
+        $('#header').load('../layout/navbar/navbar.html');
+        $('#footer').load('../layout/footer/footer.html');
       });
     </script>
   </head>
@@ -24,22 +24,14 @@
 
       <div class="intro">
         <p data-translate="team_intro">
-          Meet the dedicated individuals behind VerificAI who are committed to fighting misinformation and promoting truth in the digital age.
+          Meet the dedicated individuals behind VerificAI who are committed to
+          fighting misinformation and promoting truth in the digital age.
         </p>
       </div>
-
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="member-image">
-            <img src="../img/team/roi.jpg" alt="Roi - Team Member" />
-          </div>
-          <div class="member-info">
-            <h3 data-translate="team_roi_name">Roi</h3>
-            <p class="role" data-translate="team_roi_role">Student</p>
-            <p class="description" data-translate="team_roi_desc"></p>
-          </div>
-        </div>
-
+      <div>
+        <h1 data-translate="team_guides_title">Our Guides</h1>
+      </div>
+      <div class="guide-grid">
         <div class="team-member">
           <div class="member-image">
             <img src="../img/team/ronit.jpg" alt="Ronit - Team Member" />
@@ -57,8 +49,27 @@
           </div>
           <div class="member-info">
             <h3 data-translate="team_fisher_name">Fisher</h3>
-            <p class="role" data-translate="team_fisher_role">Assistant Guide</p>
+            <p class="role" data-translate="team_fisher_role">
+              Assistant Guide
+            </p>
             <p class="description" data-translate="team_fisher_desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h1 data-translate="team_team_title">The Team</h1>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="../img/team/roi.jpg" alt="Roi - Team Member" />
+          </div>
+          <div class="member-info">
+            <h3 data-translate="team_roi_name">Roi</h3>
+            <p class="role" data-translate="team_roi_role">Student</p>
+            <p class="description" data-translate="team_roi_desc"></p>
           </div>
         </div>
 
@@ -130,16 +141,16 @@
 
         <div class="team-member">
           <div class="member-image">
-            <img src="" alt="Team Member" />
+            <img src="../img/team/noa.jpg" alt="Team Member" />
           </div>
           <div class="member-info">
-            <h3 data-translate="team_member1_name">Team Member</h3>
-            <p class="role" data-translate="team_member1_role">Student</p>
-            <p class="description" data-translate="team_member1_desc"></p>
+            <h3 data-translate="team_noa_name">noa</h3>
+            <p class="role" data-translate="team_noa_role">Student</p>
+            <p class="description" data-translate="team_noa_desc"></p>
           </div>
         </div>
 
-        <div class="team-member">
+        <!-- <div class="team-member">
           <div class="member-image">
             <img src="" alt="Team Member" />
           </div>
@@ -159,13 +170,29 @@
             <p class="role" data-translate="team_member3_role">Student</p>
             <p class="description" data-translate="team_member3_desc"></p>
           </div>
-        </div>
+        </div> -->
+      </div>
+
+      <div class="team">
+        <h2 data-translate="about_team_title">
+          This is us, the VerificAI Team
+        </h2>
+        <p data-translate="about_team_text">
+          We built this website to address the growing need for verifying
+          information that misleads us daily. Whether it's news events or online
+          rumors – we are here.
+        </p>
+        <img src="../img/us.png" alt="The VerificAI team in a meeting" />
       </div>
 
       <div class="mission-section">
         <h2 data-translate="team_mission_title">Our Mission</h2>
         <p data-translate="team_mission_text">
-          We are a diverse team of professionals united by a common goal: to create a more informed and truthful digital world. Through our combined expertise in technology, media, and fact-checking, we work tirelessly to provide reliable verification tools and promote responsible information sharing.
+          We are a diverse team of professionals united by a common goal: to
+          create a more informed and truthful digital world. Through our
+          combined expertise in technology, media, and fact-checking, we work
+          tirelessly to provide reliable verification tools and promote
+          responsible information sharing.
         </p>
       </div>
     </div>

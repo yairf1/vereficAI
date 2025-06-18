@@ -84,30 +84,6 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.team {
-  text-align: center;
-}
-
-.team h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #003366;
-}
-
-.team p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
-.team img {
-  width: 80%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
