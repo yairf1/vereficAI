@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>solution</title>
-    <link rel="stylesheet" href="./solution.css" />
+    <link rel="stylesheet" href="../solution/solution.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,7 +16,7 @@
     <script defer src="./solution.js"></script>
     <script>
       $(function () {
-        $('#header').load('../layout/navbar/navbar.html',);
+        $('#header').load('../layout/navbar/navbar.html');
       });
       $(function () {
         $('#footer').load('../layout/footer/footer.html');
@@ -29,7 +29,9 @@
     <main class="main-content">
       <div class="background-container">
         <div class="content-wrapper">
-          <h1 data-translate="enterContent">Enter URL / Text / Picture of Article</h1>
+          <h1 data-translate="enterContent">
+            Enter URL / Text / Picture of Article
+          </h1>
 
           <form id="search-form">
             <div class="search-wrapper">
@@ -40,7 +42,8 @@
                 required
               />
               <button type="submit" class="button" title="Search">
-                <i class="fas fa-search"></i> <span data-translate="isReliable">Is this reliable?</span>
+                <i class="fas fa-search"></i>
+                <span data-translate="isReliable">Is this reliable?</span>
               </button>
             </div>
           </form>
