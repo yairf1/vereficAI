@@ -27,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       const data = await response.json();
+      let responseText = data.reply;
       console.log(data.reply);
 
       // Display the full response
-      responseDisplay.textContent = data.reply.content;
+      responseDisplay.textContent = data.reply;
       responseDisplay.style.display = 'block';
 
       // Reset all boxes
@@ -40,22 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Determine which box to highlight based on the response
-      const responseText = data.reply.content.toLowerCase();
       let targetBox;
 
       if (
-        responseText.includes('true') ||
-        responseText.includes('reliable') ||
-        responseText.includes('confirmed')
+        responseText.includes('TRUE')
       ) {
+        console.log('true statment');
         targetBox = document.getElementById('box1');
       } else if (
-        responseText.includes('false') ||
-        responseText.includes('unreliable') ||
-        responseText.includes('fake')
+        responseText.includes('FALSE')
       ) {
+        console.log('false statement');
         targetBox = document.getElementById('box3');
       } else {
+        console.log('neutral statement');
         targetBox = document.getElementById('box2');
       }
 
