@@ -2,7 +2,7 @@
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const express = require('express');
-const axios = require('axios'); // <-- NEW: For making HTTP requests
+const axios = require('axios');
 const app = express();
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
@@ -26,10 +26,10 @@ console.log(' Env vars:', {
   SEARCH_ENGINE_ID: SEARCH_ENGINE_ID ? ' loaded' : ' missing',
 });
 
-// 4) Google AI client
+// Google AI client
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-// ... (Middleware remains the same) ...
+// Middleware 
 app.use(express.json());
 app.use((req, res, next) => {
   const allowedOrigins = [
@@ -81,7 +81,7 @@ async function searchTheWeb(query) {
         }
       }
 
-      // Format the results into a string for the LLM
+      // Format the results into a string for the prompt
       const context = searchResults.slice(0, 5).map(item => {
         const published = extractPublishedDate(item);
         return (
@@ -97,7 +97,7 @@ async function searchTheWeb(query) {
       return context;
     } catch (error) {
         console.error('Error during web search:', error.response ? error.response.data : error.message);
-        return ''; // Return empty string on error
+        return ''; 
     }
 }
 
@@ -105,10 +105,10 @@ app.post('/chat', async (req, res) => {
     try {
         const claim = req.body.question;
         
-        // 1. Search for real-time information first
+        // Search for real-time information first
         const searchContext = await searchTheWeb(claim);
 
-        // 2. Augment the prompt with the search results
+        // Augment the prompt with the search results
         const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
         const systemPrompt = `

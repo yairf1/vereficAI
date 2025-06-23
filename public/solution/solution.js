@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const question = input.value.trim();
     if (!question) return;
 
-    loader.style.display = 'block';
+    loader.classList.add('show');
     resultBoxes.style.opacity = 0.3;
     responseDisplay.style.display = 'none';
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('neutral statement');
         targetBox = document.getElementById('box2');
       }
-
+      
       // Highlight the target box and fade others
       targetBox.classList.add('highlight');
       boxes.forEach(box => {
@@ -65,13 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
           box.classList.add('faded');
         }
       });
+      
     } catch (error) {
       console.error('Error:', error);
       responseDisplay.textContent =
         'An error occurred while processing your request.';
       responseDisplay.style.display = 'block';
     } finally {
-      loader.style.display = 'none';
+      loader.classList.remove('show');
       resultBoxes.style.opacity = 1;
     }
   });

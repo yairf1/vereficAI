@@ -300,7 +300,7 @@ footer {
 
   /* Reduce main content top margin on tablets */
   .main-content {
-    margin-top: 60px;
+    margin-top: 80px;
     padding: 0 20px;
   }
 
@@ -325,7 +325,7 @@ footer {
   }
 
   .main-content {
-    margin-top: 50px;
+    margin-top: 80px;
     padding: 0 15px;
   }
 
