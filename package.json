@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/yairf1/vereficAI#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.10.0",
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
