@@ -102,76 +102,57 @@ async function searchTheWeb(query) {
 }
 
 app.post('/chat', async (req, res) => {
-    try {
-        const claim = req.body.question;
+  try {
+      const claim = req.body.question;
+      
+      // Search for real-time information first
+      const searchContext = await searchTheWeb(claim);
+      // Augment the prompt with the search results
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const systemPrompt = `
+        You are a professional fact-checking AI. Your job is to verify whether a specific factual claim is TRUE, FALSE, or UNCERTAIN using ONLY the context provided from recent web search results.
         
-        // Search for real-time information first
-        const searchContext = await searchTheWeb(claim);
-
-        // Augment the prompt with the search results
-        const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
-        const systemPrompt = `
-          You are a professional fact-checking AI. Your job is to verify whether a specific factual claim is TRUE, FALSE, or UNCERTAIN using ONLY the context provided from recent web search results.
-
-          Today’s date is ${today}. If the claim is about today's date, (or other future or past dates e.g. 'tomorrow is xx.xx.xxxx', 'one week ago the date was...') compare it directly to this value without needing additional sources.
-
-          If the claim contains time-sensitive words like "currently", "today", or "as of now", use the most recent information available in the context to determine the truth.
-
-          If multiple sources conflict, resolve contradictions by preferring:
-          1. The most recent publication date, if available.
-          2. Official or highly credible sources (e.g., .gov, .edu, Wikipedia, major news outlets).
-
-          If no clear conclusion can be reached from the context alone, return **UNCERTAIN**.
-
-          If the claim is a known conspiracy theory and the context either avoids confirming it or presents it as a myth, you may return **FALSE**.
-
-          If the claim is nonsense, ghibberish, or not a factual statement,(e.g. 'ihfdbvoih', 'i love you', 'i think my friend's hair is ugly', 'justin biber is a bad singer') return **UNCERTAIN**, mention in the summary that you didnt understand what the user meant in this statement, and dont mention any source.
-
-          If the claim expresses an opinion, feeling, or subjective judgment (e.g., "X is better", "I love Y", "Z is ugly"), return **UNCERTAIN**, mention that it cannot be verified as a factual claim, and dont mention any source.
-
-          If the claim is vague, lacks clear subjects, or refers to unspecified times, people, or events, return **UNCERTAIN** and explain that the claim is too ambiguous to verify.
-
-          If the claim appears to be a joke, meme, satire, or intentionally absurd statement, return **UNCERTAIN** and explain that you do not interpret jokes or satire as factual claims.
-
-          If the claim is a conditional, hypothetical, or speculative statement (e.g., "if X, then Y"), return **UNCERTAIN** and explain that such statements cannot be verified as true or false.
-
-          Do not use your own internal definitions or facts. If the meaning of a word, location, or term is not explained in the context, return **UNCERTAIN**.
-
-          If the claim includes a specific number, statistic, or date, only verify it if an exact match is found in the context. Do not estimate or guess.
-
-          If the context contains directly conflicting statements with no clear resolution (e.g., two credible sources saying opposite things), return **UNCERTAIN**.
-
-          Respond in this EXACT format and only lowercase:
-          - the statment is:
-              TRUE, FALSE, or UNCERTAIN — only the TRUE, FALSE or UNCERTAIN in uppercase as the title.
-          - summarry:
-             Two or three short sentences explaining your reasoning based only on the context and the known current date if applicable.
-          - sources: 
-              A list of the sources you used, including their URLs.
-
-          Do NOT use any outside knowledge. Only use the information from the context or the known current date.
-
-          Here is the context from recent web search results:
-          --- CONTEXT START ---
-          ${searchContext}
-          --- CONTEXT END ---
-
-          Now, using only the context above, verify this claim: "${claim}"
-          `;
-
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-        const result = await model.generateContent(systemPrompt);
-        const response = await result.response;
-        const answer = response.text();
-
-        console.log(' Fact Check Reply:\n', answer);
-
-        res.json({ reply: answer });
-    } catch (err) {
-        console.error(' Google AI error:', err);
-        res.status(500).json({ error: err.message });
-    }
+        Today’s date is ${today}. If the claim is about today's date, (or other future or past dates e.g. 'tomorrow is xx.xx.xxxx', 'one week ago the date was...') compare it directly to this value without needing additional sources.
+        
+        Always use the most recent information available in the context to determine the truth.
+        
+        You may infer a claim to be TRUE or FALSE if the context includes strong indirect evidence that would reasonably support it. For example, if a claim says “X is alive” and recent context refers to them in the present tense, it can be inferred TRUE even if it doesn't say “X is alive” explicitly. This also applies to other claims involving positions, actions, or statuses that are clearly evident from current phrasing.
+        
+        Avoid being overly cautious — if the evidence is indirect but clear and recent, return a confident answer.
+        
+        Only respond with UNCERTAIN if the evidence is missing, outdated, or clearly contradictory. Do not use UNCERTAIN just because the information is indirectly stated or implied — evaluate whether a reasonable person could confidently infer the truth from the context.
+        
+        If multiple sources conflict, resolve contradictions by preferring:
+        1. The most recent publication date, if available.
+        2. Official or highly credible sources (e.g., .gov, .edu, Wikipedia, major news outlets).
+        If the claim is a known conspiracy theory and the context either avoids confirming it or presents it as a myth, you may return **FALSE**.
+        
+        Respond in this EXACT format and *only* in the language that the provided claim are writen in:
+        - the statment is:
+            TRUE, FALSE, or UNCERTAIN — only the TRUE, FALSE or UNCERTAIN in uppercase as the title.
+        - summarry:
+           Two or three short sentences explaining your reasoning based only on the context and the known current date if applicable.
+        - sources: 
+            A list of the sources you used, including their URLs.
+        
+            Do NOT use any outside knowledge. Only use the information from the context or the known current date.
+        Here is the context from recent web search results:
+        --- CONTEXT START ---
+        ${searchContext}
+        --- CONTEXT END ---
+        
+        Now, using only the context above, verify this claim: "${claim}"
+      `;
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite-preview-06-17' });
+      const result = await model.generateContent(systemPrompt);
+      const response = await result.response;
+      const answer = response.text();
+      console.log(' Fact Check Reply:\n', answer);
+      res.json({ reply: answer });
+  } catch (err) {
+      console.error('error:', err);
+      res.status(500).json({ error: err.message });
+  }
 });
 
 app.listen(PORT, () => {
